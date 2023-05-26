@@ -1,12 +1,9 @@
-import getQrCode from '../../helpers/getQrCode'
 import './styles.css'
 
 function App() {
 
   return (
-    <div className="App"> 
-      <h1>Cardapio de Cliente</h1>
-    </div>
+    <h1 className='title'>Hello!</h1>
 
   );
 }
