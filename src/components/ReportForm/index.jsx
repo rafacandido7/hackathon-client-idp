@@ -71,8 +71,8 @@ const UserForm = () => {
 
   return (
     <div className='container'>
-      <div className="emoji-wrapper">
-        <div className="emoji-container">
+      <div className='emoji-wrapper'>
+        <div className='emoji-container'>
           <Person
             className={`emoji ${secaoAtual === 1 ? 'active' : ''}`}
             onClick={() => setSecaoAtual(1)}
@@ -93,12 +93,12 @@ const UserForm = () => {
       <form onSubmit={formik.handleSubmit}>
         {secaoAtual === 1 && (
           <>
-            <Typography variant="h6">Cadastro</Typography>
+            <Typography variant='h6'>Cadastro</Typography>
             <TextField
               className='registro_academico'
               id='registro_academico'
               name='registroAcademico'
-              label="Registro Acadêmico"
+              label='Registro Acadêmico'
               value={formik.values.registroAcademico}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -111,7 +111,7 @@ const UserForm = () => {
               className='registro_nome'
               id='registro_nome'
               name='nome'
-              label="Nome"
+              label='Nome'
               value={formik.values.nome}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -124,7 +124,7 @@ const UserForm = () => {
               className='registro_pedido'
               id='registro_pedido'
               name='pedido'
-              label="Pedido"
+              label='Pedido'
               value={formik.values.pedido}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -133,7 +133,7 @@ const UserForm = () => {
               onKeyDown={handleKeyDown}
             />
             <br /><br />
-            <Button className='botao_avancar' type="button" onClick={handleNext} disabled={isCadastroInvalido}>
+            <Button className='botao_avancar' type='button' onClick={handleNext} disabled={isCadastroInvalido}>
               Avançar
             </Button>
           </>
@@ -141,12 +141,12 @@ const UserForm = () => {
 
         {secaoAtual === 2 && (
           <>
-            <Typography variant="h6">Avaliação</Typography>
-            <FormControl component="fieldset">
-              <FormLabel component="legend">Avalie sua experiência:</FormLabel>
+            <Typography variant='h6'>Avaliação</Typography>
+            <FormControl component='fieldset'>
+              <FormLabel component='legend'>Avalie sua experiência:</FormLabel>
               <RadioGroup value={avaliacao} onChange={handleAvaliacaoChange}>
                 <FormControlLabel
-                  value="ruim"
+                  value='ruim'
                   control={<Radio />}
                   label={
                     <>
@@ -156,7 +156,7 @@ const UserForm = () => {
                   }
                 />
                 <FormControlLabel
-                  value="bom"
+                  value='bom'
                   control={<Radio />}
                   label={
                     <>
@@ -166,7 +166,7 @@ const UserForm = () => {
                   }
                 />
                 <FormControlLabel
-                  value="satisfeito"
+                  value='satisfeito'
                   control={<Radio />}
                   label={
                     <>
@@ -176,7 +176,7 @@ const UserForm = () => {
                   }
                 />
                 <FormControlLabel
-                  value="perfeito"
+                  value='perfeito'
                   control={<Radio />}
                   label={
                     <>
@@ -192,14 +192,14 @@ const UserForm = () => {
               className='comentario'
               id='comentario'
               name='comentario'
-              label="Comentário"
+              label='Comentário'
               value={comentario}
               onChange={handleComentarioChange}
               onKeyDown={handleKeyDown}
             />
             <br /><br />
             <Button onClick={handleBack}>Voltar</Button>
-            <Button className='botao_avancar' type="button" onClick={handleNext}>
+            <Button className='botao_avancar' type='button' onClick={handleNext}>
               Avançar
             </Button>
           </>
@@ -207,14 +207,14 @@ const UserForm = () => {
 
         {secaoAtual === 3 && (
           <>
-            <Typography variant="h6" className='finalizacao_3'>Finalização</Typography>
+            <Typography variant='h6' className='finalizacao_3'>Finalização</Typography>
             <Typography className='registro_3'>Registro Acadêmico: {formik.values.registroAcademico}</Typography>
             <Typography className='nome_3'>Nome: {formik.values.nome}</Typography>
             <Typography className='pedido_3'>Pedido: {formik.values.pedido}</Typography>
             <Typography className='avaliacao_3'>Avaliação: {avaliacao}</Typography>
             <Typography className='comentario_3'>Comentário: {comentario}</Typography>
             <Button onClick={handleBack}>Voltar</Button>
-            <Button className='botao_enviar' type="submit">
+            <Button className='botao_enviar' type='submit'>
               Enviar
             </Button>
           </>

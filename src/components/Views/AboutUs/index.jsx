@@ -1,6 +1,6 @@
 function AboutUs() {
   return (
-    <div style={{backgroundColor:"#FCF6F5"}}>AboutUs</div>
+    <div style={{backgroundColor:'#FCF6F5'}}>AboutUs</div>
   )
 }
 

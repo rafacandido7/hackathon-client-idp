@@ -1,5 +1,5 @@
-import { createContext, useState, useContext } from "react";
-import cogoToast from "cogo-toast";
+import { createContext, useState, useContext } from 'react';
+import cogoToast from 'cogo-toast';
 
 const CartContext = createContext();
 
@@ -19,7 +19,7 @@ function CartProvider({ children }) {
       setCartItems((prevItems) => [...prevItems, item]);
     }
 
-    cogoToast.success("Produto adicionado ao carrinho!");
+    cogoToast.success('Produto adicionado ao carrinho!');
   }
 
   function removeFromCart(itemId) {
