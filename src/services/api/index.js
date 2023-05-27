@@ -43,3 +43,5 @@ export const getProductsById = async (id) => {
     console.error(error)
   }
 }
+
+console.log(await getCategories())
