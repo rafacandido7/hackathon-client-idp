@@ -1,5 +1,8 @@
 import './styles.css'
 
+import ImagemHome from './assets/imagem-header.png'
+
+
 function Header() {
   return (
     <div id="main">
@@ -10,7 +13,7 @@ function Header() {
                     <p style={{ fontSize: 20 }}>Desfrute de refeições saborosas e nutritivas, especialmente preparadas para acompanhar sua jornada acadêmica.</p>
                 </div>
                 <div className="image-container">
-                    <img src='https://o.remove.bg/downloads/9d8d2473-b637-4c16-9a48-697553b5007b/imagem-header-removebg-preview.png' alt="Imagem Header" />
+                    <img src={ImagemHome} alt="Imagem Header" />
                 </div>
             </div>
         </div>
