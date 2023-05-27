@@ -30,4 +30,6 @@ export const getCategoriesById = async (id) => {
   }
 }
 
+
+
 console.log(await getCategoriesById(5))
