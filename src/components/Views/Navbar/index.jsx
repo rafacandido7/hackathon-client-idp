@@ -32,16 +32,14 @@ function Navbar() {
           <ListIcon />
         </button>
 
-        
       </header>
-      
         <Switch>
           <Route path='/' exact component={FoodMenu} />
           <Route path='/about' exact component={AboutUs} />
           <Route path='/review' exact component={Reviews} />
         </Switch>
     </BrowserRouter>
-    
+
   )
 }
 

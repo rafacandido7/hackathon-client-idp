@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
-
 import Footer from "../Footer";
-import ProductPaper from "../Papers/ProductPaper";
-import FoodMenu from '../Views/Menu';
 import Navbar from '../Views/Navbar';
 
 import "./styles.css";
 import '../../index.css';
+import ProductPaper from "../Papers/ProductPaper";
 
-async function App() {
-  const [cart, setCart] = useState([]);
+function App() {
   return (
     <div className="App">
 			<Navbar />

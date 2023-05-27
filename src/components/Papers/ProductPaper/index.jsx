@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import ProductCard from "../../Cards/ProductCard";
-import "./styles.css";
-import { Button } from "@mui/material";
+
 import { getProducts } from "../../../services/api";
+
+import "./styles.css";
 
 function ProductPaper() {
   const [products, setProducts] = useState([]);
@@ -39,15 +40,12 @@ function ProductPaper() {
         <Grid item key={product.id}>
           <ProductCard
             className="productCard"
-            nome={product.nome}
+            nome={`${product.categoria.nome} - ${product.nome}`}
             fotoUrl={product.fotoUrl}
             valorUnitario={product.valorUnitario}
             tempoPreparo={product.tempoPreparo}
             disponivel={product.disponivel}
           />
-          <Button variant="contained" color="">
-            Adicionar ao carrinho
-          </Button>
         </Grid>
       ))}
     </Grid>
