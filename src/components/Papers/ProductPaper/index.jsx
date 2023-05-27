@@ -36,32 +36,37 @@ function ProductPaper() {
   };
 
   return (
-    <Grid
-      container
-      direction='row'
-      alignItems='center'
-      justifyContent='center'
-      spacing={2}
-    >
-      {products.map((product) => (
-        <Grid item key={product.id}>
-          <ProductCard
-            className='productCard'
-            id={product.id}
-            nome={`${product.categoria.nome} - ${product.nome}`}
-            fotoUrl={product.fotoUrl}
-            valorUnitario={product.valorUnitario}
-            tempoPreparo={product.tempoPreparo}
-            disponivel={product.disponivel}
-            handleAddToCart={handleAddToCart}
-            {...product}
-          />
-        </Grid>
-      ))}
-      <Typography>
-        Total de itens no carrinho: {totalItems}
-      </Typography>
+    <Grid>
+      <Typography variant='h3' fontFamily={'Baloo2Regular'} fontWeight={'bold'} textAlign={'center'} padding={7}>Cárdapio  </Typography>
+      <Grid
+        container
+        direction='row'
+        alignItems='center'
+        justifyContent='center'
+        spacing={4}
+      >
+
+        {products.map((product) => (
+          <Grid item key={product.id}>
+            <ProductCard
+              className='productCard'
+              id={product.id}
+              nome={`${product.categoria.nome} - ${product.nome}`}
+              fotoUrl={product.fotoUrl}
+              valorUnitario={product.valorUnitario}
+              tempoPreparo={product.tempoPreparo}
+              disponivel={product.disponivel}
+              handleAddToCart={handleAddToCart}
+              {...product}
+            />
+          </Grid>
+        ))}
+        <Typography>
+          Total de itens no carrinho: {totalItems}
+        </Typography>
+      </Grid>
     </Grid>
+
   );
 }
 

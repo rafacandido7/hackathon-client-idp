@@ -3,7 +3,10 @@ import { Paper } from '@mui/material'
 function PaperBlock(props) {
   return (
     <Paper
-      elevation={1}
+      elevation={4}
+      sx={{
+        borderRadius: '15px',
+      }}
       {...props}
     />
   )
