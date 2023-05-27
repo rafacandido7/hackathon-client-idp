@@ -3,7 +3,7 @@ import { useCart } from '../../../Contexts/CartContext'
 
 function Checkout() {
   return (
-    <Typography></Typography>
+    <Typography>carrinho</Typography>
   )
 }
 
