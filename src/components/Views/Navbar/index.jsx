@@ -1,8 +1,13 @@
 import './styles.css'
 import { useRef } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 
 import ListIcon from '@mui/icons-material/List';
 import CloseIcon from '@mui/icons-material/Close';
+import FoodMenu from '../Menu';
+import AboutUs from '../AboutUs';
+import Reviews from '../Reviews';
 
 function Navbar() {
   const navRef = useRef();
@@ -12,12 +17,13 @@ function Navbar() {
   }
 
   return (
-    <header>
+    <BrowserRouter>
+      <header>
         <img className='logo' src='https://www.idp.edu.br/wp-content/themes/idp_principal_2020/img/id-idp.png' />
         <nav ref={navRef}>
-          <a href="">Home</a>
-          <a href="/#">Sobre Nós</a>
-          <a href="/#">Avaliação</a>
+          <a href="/">Home</a>
+          <a href="/about#">Sobre Nós</a>
+          <a href="/reviews">Avaliação</a>
           <button className='nav-button nav-close-button' onClick={showNavBar}>
               <CloseIcon />
           </button>
@@ -25,7 +31,17 @@ function Navbar() {
         <button className='nav-button' onClick={showNavBar}>
           <ListIcon />
         </button>
-    </header>
+
+        
+      </header>
+      
+        <Switch>
+          <Route path='/' exact component={FoodMenu} />
+          <Route path='/about' exact component={AboutUs} />
+          <Route path='/review' exact component={Reviews} />
+        </Switch>
+    </BrowserRouter>
+    
   )
 }
 
