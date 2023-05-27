@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Grid } from '@mui/material';
 import { Person, Star, Description, SentimentVeryDissatisfied, SentimentSatisfied, ThumbUpAlt, Favorite } from '@mui/icons-material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -72,37 +72,40 @@ const UserForm = () => {
 
   return (
     <div className='content'>
-     <Box
-      sx={{
-        width: '40%',
-        height: '50%',
-        backgroundColor: 'transparent',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
-        border: '3px solid white',
-      }}
-    >
-      <div className="emoji-container">
-          <Person
-            className={`emoji ${secaoAtual === 1 ? 'active' : ''}`}
-            onClick={() => setSecaoAtual(1)}
-            style={{ fontSize: '3rem', cursor: 'pointer' }}
-          />
-          <Star
-            className={`emoji ${secaoAtual === 2 ? 'active' : ''}`}
-            onClick={() => setSecaoAtual(2)}
-            style={{ fontSize: '3rem', cursor: 'pointer' }}
-          />
-          <Description
-            className={`emoji ${secaoAtual === 3 ? 'active' : ''}`}
-            onClick={() => setSecaoAtual(3)}
-            style={{ fontSize: '3rem', cursor: 'pointer' }}
-          />
-        </div>
+
+    <Box sx={{
+      width: '40%',
+      height: '60%',
+      backgroundColor: 'rgba(255, 255, 255, 0.3)',
+      backdropFilter: 'blur(8px)',
+      WebkitBackdropFilter: 'blur(8px)',
+      border: '2px solid #fff',
+      borderRadius: 4,
+    }}>
+      <Grid container center justifyContent="center">
+        <Person
+          className={`emoji ${secaoAtual === 1 ? 'active' : ''}`}
+          onClick={() => setSecaoAtual(1)}
+          style={{ fontSize: '3rem', cursor: 'pointer', color: '#fff' }}
+        />
+        <Star
+          className={`emoji ${secaoAtual === 2 ? 'active' : ''}`}
+          onClick={() => setSecaoAtual(2)}
+          style={{ fontSize: '3rem', cursor: 'pointer', color: '#fff' }}
+        />
+        <Description
+          className={`emoji ${secaoAtual === 3 ? 'active' : ''}`}
+          onClick={() => setSecaoAtual(3)}
+          style={{ fontSize: '3rem', cursor: 'pointer', color: '#fff' }}
+        />
+      </Grid>
+
+
+
       <form onSubmit={formik.handleSubmit}>
         {secaoAtual === 1 && (
           <>
-            <Typography variant='h6'>Cadastro</Typography>
+            <Typography variant='h6' color={'#fff'} fontFamily={'Baloo2Regular'} fontSize={28} fontWeight={'bold'} textAlign={'center'}>CADASTRO</Typography>
             <TextField
               className='registro_academico'
               id='registro_academico'
@@ -150,7 +153,7 @@ const UserForm = () => {
 
         {secaoAtual === 2 && (
           <>
-            <Typography variant='h6'>Avaliação</Typography>
+            <Typography variant='h6' color={'#fff'} fontFamily={'Baloo2Regular'} fontSize={28} fontWeight={'bold'} textAlign={'center'}>AVALIAÇÄO</Typography>
             <FormControl component='fieldset'>
               <FormLabel component='legend'>Avalie sua experiência:</FormLabel>
               <RadioGroup value={avaliacao} onChange={handleAvaliacaoChange}>
@@ -216,7 +219,7 @@ const UserForm = () => {
 
         {secaoAtual === 3 && (
           <>
-            <Typography variant='h6' className='finalizacao_3'>Finalização</Typography>
+          <Typography variant='h6' color={'#fff'} fontFamily={'Baloo2Regular'} fontSize={28} fontWeight={'bold'} textAlign={'center'}>FINALIZAÇAO</Typography>
             <Typography className='registro_3'>Registro Acadêmico: {formik.values.registroAcademico}</Typography>
             <Typography className='nome_3'>Nome: {formik.values.nome}</Typography>
             <Typography className='pedido_3'>Pedido: {formik.values.pedido}</Typography>
@@ -230,7 +233,6 @@ const UserForm = () => {
         )}
       </form>
       </Box>
-
     </div>
   );
 };
