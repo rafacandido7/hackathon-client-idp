@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from "react"
+import './styles.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -27,10 +28,7 @@ function Navbar() {
 	const drawer = (
 		<Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
 			<Typography variant="h6" sx={{ my: 2 }}>
-				<img
-					src="https://www.idp.edu.br/wp-content/themes/idp_principal_2020/img/id-idp.png"
-					alt="Logo IDP Branca"
-				/>
+				
 			</Typography>
 			<Divider />
 			<List>
@@ -46,10 +44,10 @@ function Navbar() {
 	);
 
 	return (
-		<Box sx={{ display: "flex" }}>
+		<Box className='header' >
 			<CssBaseline />
 			<AppBar component="nav">
-				<Toolbar>
+				<Toolbar sx={{ backgroundColor: '#FBEAEB' }}>
 					<IconButton
 						color="inherit"
 						aria-label="open drawer"
@@ -65,8 +63,9 @@ function Navbar() {
 						sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
 					>
 						<img
-							src="https://www.idp.edu.br/wp-content/themes/idp_principal_2020/img/id-idp.png"
+							src="https://www.idp.edu.br/wp-content/themes/idp_principal_2020/img/id-idp-azul-escuro.png"
 							alt="Logo IDP Branca"
+							style={{width: 60}}
 						/>
 					</Typography>
 					<Box sx={{
@@ -85,7 +84,7 @@ function Navbar() {
 					</Box>
 				</Toolbar>
 			</AppBar>
-			<Box component="nav">
+			<Box component="nav" >
 				<Drawer
 					variant="temporary"
 					open={mobileOpen}
