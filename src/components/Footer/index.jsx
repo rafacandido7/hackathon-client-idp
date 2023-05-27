@@ -15,7 +15,7 @@ const Footer = () => {
             alt="Logo da Empresa"
             style={{ height: '80px' }}
           />
-          
+
         </Grid>
         <Grid style={{textAlign: 'center'}}>
             <Typography variant="subtitle" style={{ color: '#fff', fontSize: '14px' }}>

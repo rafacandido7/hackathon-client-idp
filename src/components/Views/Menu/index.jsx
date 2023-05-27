@@ -1,8 +1,9 @@
+import { getCategories } from '../../../services/api'
 
-function Menu() {
+async function FoodMenu() {
   return (
-    <><div>Menu</div><div>Menu</div><div>Menu</div><div>Menu</div><div>Menu</div><div>Menu</div></>
+    <div>FoodMenu</div>
   )
 }
 
-export default Menu
+export default FoodMenu

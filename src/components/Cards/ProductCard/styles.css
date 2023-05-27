@@ -1,0 +1,9 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 31px;
+  border-bottom: 1px solid;
+  padding-bottom: 24px;
+}
