@@ -1,11 +1,14 @@
 import Footer from '../Footer'
+import Navbar from '../Views/Navbar';
 
 import "./styles.css";
 
 function App() {
 	return (
 		<div className="App">
-      <Footer />
+			<Navbar />
+
+			<Footer />
 		</div>
 	);
 }
