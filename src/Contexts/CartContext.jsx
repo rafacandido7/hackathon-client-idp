@@ -7,20 +7,23 @@ function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   function addToCart(item) {
-    const existingItemIndex = cartItems.findIndex(
-      (cartItem) => cartItem.id === item.id
-    );
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
-    if (existingItemIndex !== -1) {
-      const updatedCartItems = [...cartItems];
-      updatedCartItems[existingItemIndex].quantity += item.quantity;
+    if (existingItem) {
+      const updatedCartItems = cartItems.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+          : cartItem
+      );
       setCartItems(updatedCartItems);
     } else {
-      setCartItems((prevItems) => [...prevItems, item]);
+      const newItem = { ...item, quantity: 1 };
+      setCartItems((prevItems) => [...prevItems, newItem]);
     }
 
     cogoToast.success('Produto adicionado ao carrinho!');
   }
+
 
   function removeFromCart(itemId) {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
@@ -49,7 +52,6 @@ function CartProvider({ children }) {
   );
 
   const totalItems = cartItems.length;
-
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.valorUnitario * item.quantity,
