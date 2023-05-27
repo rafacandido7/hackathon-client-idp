@@ -27,7 +27,7 @@ function Navbar() {
           <Link to="/about">Sobre Nós</Link>
           <Link to="/reviews">Avaliação</Link>
           <Link to="/shopp">
-            <LocalGroceryStoreIcon style={{ marginLeft: 150 }} />
+            <LocalGroceryStoreIcon style={{ marginLeft: 10 }} />
           </Link>
           <button className='nav-button nav-close-button' onClick={showNavBar}>
               <CloseIcon />
