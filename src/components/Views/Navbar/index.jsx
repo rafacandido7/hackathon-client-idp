@@ -13,7 +13,7 @@ function Navbar() {
   const navRef = useRef();
 
   const showNavBar = () => {
-    navRef.current.classList.toggle("responsive_nav");
+    navRef.current.classList.toggle('responsive_nav');
   }
 
   return (
@@ -21,9 +21,9 @@ function Navbar() {
       <header>
         <img className='logo' src='https://www.idp.edu.br/wp-content/themes/idp_principal_2020/img/id-idp.png' />
         <nav ref={navRef}>
-          <a href="/">Home</a>
-          <a href="/about#">Sobre Nós</a>
-          <a href="/reviews">Avaliação</a>
+          <a href='/'>Home</a>
+          <a href='/about#'>Sobre Nós</a>
+          <a href='/reviews'>Avaliação</a>
           <button className='nav-button nav-close-button' onClick={showNavBar}>
               <CloseIcon />
           </button>

@@ -7,11 +7,19 @@ function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   function addToCart(item) {
-    setCartItems((prevItems) => {
-      const newItems = [...prevItems, item];
-      cogoToast.success("Produto adicionado ao carrinho!");
-      return newItems;
-    });
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) => cartItem.id === item.id
+    );
+
+    if (existingItemIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].quantity += item.quantity;
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems((prevItems) => [...prevItems, item]);
+    }
+
+    cogoToast.success("Produto adicionado ao carrinho!");
   }
 
   function removeFromCart(itemId) {
@@ -35,10 +43,16 @@ function CartProvider({ children }) {
     return maxPreparationTime;
   }
 
+  const totalProducts = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const totalItems = cartItems.length;
 
+
   const totalPrice = cartItems.reduce(
-    (total, item) => total + item.valorUnitario,
+    (total, item) => total + item.valorUnitario * item.quantity,
     0
   );
 
@@ -50,6 +64,7 @@ function CartProvider({ children }) {
         removeFromCart,
         clearCart,
         getMaxPreparationTime,
+        totalProducts,
         totalItems,
         totalPrice,
       }}
