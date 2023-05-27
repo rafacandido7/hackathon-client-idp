@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.css';
 import { Typography, Grid, Link } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -16,7 +15,7 @@ const Footer = () => {
             alt="Logo da Empresa"
             style={{ height: '80px' }}
           />
-          
+
         </Grid>
         <Grid style={{textAlign: 'center'}}>
             <Typography variant="subtitle" style={{ color: '#fff', fontSize: '14px' }}>
