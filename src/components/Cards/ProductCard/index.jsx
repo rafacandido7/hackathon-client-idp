@@ -34,19 +34,21 @@ function ProductCard({
   return (
     <>
       <PaperBlock className='productCard'>
-        <Grid
-          container
-          direction='column'
-          alignItems='center'
-          justifyContent='center'
-        >
+      <Grid
+        container
+        direction='column'
+        alignItems='center'
+        justifyContent='center'
+        backgroundColor='#fff'
+        borderRadius='80'
+      >
           <ProductImage fotoUrl={fotoUrl} />
-          <Typography className='productName' fontWeight='bold' fontSize={21}>
+          <Typography className='productName' fontFamily='Baloo2ExtraBold' fontSize={23}>
             {nome}
           </Typography>
           <Typography
-            fontWeight='bold'
-            color={disponivel === true ? '#AAFF33' : '#FF0000'}
+            fontFamily='Baloo2ExtraBold'
+            color={disponivel === true ? '#2ECC71' : '#FF0000'}
           >
             {disponivel === true ? 'Disponível' : 'Indisponível'}
           </Typography>
@@ -58,8 +60,8 @@ function ProductCard({
               justifyContent='center'
             >
               <AccessTimeIcon />
-              <Typography ml='2px' fontWeight='extraBold' fontSize={18}>
-                Tempo de preparo: {tempoPreparo} min
+              <Typography ml='5px' fontFamily='Baloo2Regular' fontSize={18}>
+                 {tempoPreparo} min
               </Typography>
             </Grid>
           ) : (
@@ -72,15 +74,15 @@ function ProductCard({
             justifyContent='center'
             mt='10px'
           >
-            <Typography fontWeight='bold' fontSize={22}>
+            <Typography fontFamily={"Baloo2Regular"} fontSize={28} fontWeight={'bold'}>
               {floatToBRL(valorUnitario)}
             </Typography>
             <button
               onClick={addToCart}
-              style={{ backgroundColor: '#5767aa' }}
+              style={{ backgroundColor: '#2A9F85' }}
               className='addCartButton'
             >
-              <ShoppingCart size={22} color='#FFFFFF' fill='#FFFFFF' />
+              <ShoppingCart size={22} color='#fff' fill='#fff' />
             </button>
           </Grid>
         </Grid>
