@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import ProductCard from '../../Cards/ProductCard';
+
+import { useCart } from '../../../Contexts/CartContext';
 
 import { getProducts } from '../../../services/api';
 
 import './styles.css';
 
 function ProductPaper() {
+  const { addToCart, totalItems } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,6 +31,10 @@ function ProductPaper() {
     return <div>Carregando produtos...</div>;
   }
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
+
   return (
     <Grid
       container
@@ -40,14 +47,20 @@ function ProductPaper() {
         <Grid item key={product.id}>
           <ProductCard
             className='productCard'
+            id={product.id}
             nome={`${product.categoria.nome} - ${product.nome}`}
             fotoUrl={product.fotoUrl}
             valorUnitario={product.valorUnitario}
             tempoPreparo={product.tempoPreparo}
             disponivel={product.disponivel}
+            handleAddToCart={handleAddToCart}
+            {...product}
           />
         </Grid>
       ))}
+      <Typography>
+        Total de itens no carrinho: {totalItems}
+      </Typography>
     </Grid>
   );
 }
