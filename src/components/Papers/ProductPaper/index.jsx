@@ -28,7 +28,7 @@ function ProductPaper() {
   }, []);
 
   if (loading) {
-    return <div>Carregando produtos...</div>;
+    return <Typography display='flex' alignItems='center' justifyContent='center'>Carregando produtos...</Typography>;
   }
 
   const handleAddToCart = (product) => {
