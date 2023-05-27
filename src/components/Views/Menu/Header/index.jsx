@@ -2,7 +2,6 @@ import './styles.css'
 
 import ImagemHome from './assets/imagem-header.png'
 
-
 function Header() {
   return (
     <div id="main">

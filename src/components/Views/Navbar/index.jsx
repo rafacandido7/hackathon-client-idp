@@ -1,13 +1,13 @@
-import './styles.css'
 import { useRef } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-
 import ListIcon from '@mui/icons-material/List';
 import CloseIcon from '@mui/icons-material/Close';
+
 import FoodMenu from '../Menu';
 import AboutUs from '../AboutUs';
 import Reviews from '../Reviews';
+
+import './styles.css';
 
 function Navbar() {
   const navRef = useRef();

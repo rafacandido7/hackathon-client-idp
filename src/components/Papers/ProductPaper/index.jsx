@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
-import ProductCard from "../../Cards/ProductCard";
+import { useEffect, useState } from 'react';
+import { Grid } from '@mui/material';
+import ProductCard from '../../Cards/ProductCard';
 
-import { getProducts } from "../../../services/api";
+import { getProducts } from '../../../services/api';
 
-import "./styles.css";
+import './styles.css';
 
 function ProductPaper() {
   const [products, setProducts] = useState([]);
@@ -17,7 +17,7 @@ function ProductPaper() {
         setProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error("Erro ao buscar os produtos:", error);
+        console.error('Erro ao buscar os produtos:', error);
       }
     };
 
@@ -31,15 +31,15 @@ function ProductPaper() {
   return (
     <Grid
       container
-      direction="row"
-      alignItems="center"
-      justifyContent="center"
+      direction='row'
+      alignItems='center'
+      justifyContent='center'
       spacing={2}
     >
       {products.map((product) => (
         <Grid item key={product.id}>
           <ProductCard
-            className="productCard"
+            className='productCard'
             nome={`${product.categoria.nome} - ${product.nome}`}
             fotoUrl={product.fotoUrl}
             valorUnitario={product.valorUnitario}
