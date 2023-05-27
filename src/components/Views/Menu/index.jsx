@@ -1,8 +1,12 @@
-import { getCategories } from '../../../services/api'
+import Header from "./Header"
 
-async function FoodMenu() {
+ function FoodMenu() {
   return (
-    <div>FoodMenu</div>
+    <div className="container">
+      <Header />
+      
+    </div>
+
   )
 }
 
