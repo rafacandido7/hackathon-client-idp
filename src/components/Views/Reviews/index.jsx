@@ -1,6 +1,10 @@
+import UserForm from '../../ReportForm';
+
 function Reviews() {
   return (
-    <div>Reviews</div>
+    <div>
+    <UserForm />
+    </div>
   )
 }
 

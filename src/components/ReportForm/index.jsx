@@ -3,6 +3,7 @@ import { TextField, Button, Typography, FormControl, FormLabel, RadioGroup, Form
 import { Person, Star, Description, SentimentVeryDissatisfied, SentimentSatisfied, ThumbUpAlt, Favorite } from '@mui/icons-material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { Box } from '@mui/material';
 
 import './styles.css';
 
@@ -70,9 +71,18 @@ const UserForm = () => {
     formik.errors.pedido;
 
   return (
-    <div className='container'>
-      <div className='emoji-wrapper'>
-        <div className='emoji-container'>
+    <div className='content'>
+     <Box
+      sx={{
+        width: '40%',
+        height: '50%',
+        backgroundColor: 'transparent',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+        border: '3px solid white',
+      }}
+    >
+      <div className="emoji-container">
           <Person
             className={`emoji ${secaoAtual === 1 ? 'active' : ''}`}
             onClick={() => setSecaoAtual(1)}
@@ -89,7 +99,6 @@ const UserForm = () => {
             style={{ fontSize: '3rem', cursor: 'pointer' }}
           />
         </div>
-      </div>
       <form onSubmit={formik.handleSubmit}>
         {secaoAtual === 1 && (
           <>
@@ -220,6 +229,8 @@ const UserForm = () => {
           </>
         )}
       </form>
+      </Box>
+
     </div>
   );
 };

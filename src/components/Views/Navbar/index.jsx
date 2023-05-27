@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import ListIcon from '@mui/icons-material/List';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -21,9 +21,9 @@ function Navbar() {
       <header>
         <img className='logo' src='https://www.idp.edu.br/wp-content/themes/idp_principal_2020/img/id-idp.png' />
         <nav ref={navRef}>
-          <a href='/'>Home</a>
-          <a href='/about#'>Sobre Nós</a>
-          <a href='/reviews'>Avaliação</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">Sobre Nós</Link>
+          <Link to="/reviews">Avaliação</Link>
           <button className='nav-button nav-close-button' onClick={showNavBar}>
               <CloseIcon />
           </button>
@@ -33,11 +33,11 @@ function Navbar() {
         </button>
 
       </header>
-        <Switch>
-          <Route path='/' exact component={FoodMenu} />
-          <Route path='/about' exact component={AboutUs} />
-          <Route path='/review' exact component={Reviews} />
-        </Switch>
+      <Switch>
+        <Route path='/' exact component={FoodMenu} />
+        <Route path='/about' exact component={AboutUs} />
+        <Route path='/reviews' component={Reviews} />
+      </Switch>
     </BrowserRouter>
 
   )
