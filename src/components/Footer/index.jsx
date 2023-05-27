@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.css';
 import { Typography, Grid, Link } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
