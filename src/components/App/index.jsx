@@ -1,13 +1,19 @@
-import Footer from '../Footer'
+import { useEffect, useState } from "react";
+
+import Footer from "../Footer";
+import ProductPaper from "../Papers/ProductPaper";
 
 import "./styles.css";
 
-function App() {
-	return (
-		<div className="App">
+async function App() {
+  const [cart, setCart] = useState([]);
+  return (
+    <div className="App">
+      <ProductPaper />
+
       <Footer />
-		</div>
-	);
+    </div>
+  );
 }
 
 export default App;

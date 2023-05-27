@@ -1,12 +1,7 @@
-import './styles.css'
+import "./styles.css";
 
 function ProductImage(fotoUrl) {
-  return (
-    <img
-    className="productImage"
-      src={fotoUrl}
-    />
-  )
+	return <img className="productImage" src={fotoUrl.fotoUrl} />;
 }
 
-export default ProductImage
+export default ProductImage;

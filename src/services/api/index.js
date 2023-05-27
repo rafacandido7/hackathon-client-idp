@@ -44,4 +44,11 @@ export const getProductsById = async (id) => {
   }
 }
 
-console.log(await getCategories())
+export const getOrdersByUser = async () => {
+  try {
+    const response = await api.get('cliente/pedidos/usuario/1')
+    return response.data
+  } catch (error) {
+    console.error(error)
+  }
+}
