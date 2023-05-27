@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Grid, Typography } from '@mui/material';
-import ProductCard from '../../Cards/ProductCard';
+import { useEffect, useState } from "react";
+import { Grid, Typography } from "@mui/material";
+import ProductCard from "../../Cards/ProductCard";
 
-import { useCart } from '../../../Contexts/CartContext';
+import { useCart } from "../../../Contexts/CartContext";
 
-import { getProducts } from '../../../services/api';
+import { getProducts } from "../../../services/api";
 
-import './styles.css';
+import "./styles.css";
 
 function ProductPaper() {
-  const { addToCart, totalItems } = useCart();
+  const { addToCart } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +20,7 @@ function ProductPaper() {
         setProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error('Erro ao buscar os produtos:', error);
+        console.error("Erro ao buscar os produtos:", error);
       }
     };
 
@@ -28,7 +28,11 @@ function ProductPaper() {
   }, []);
 
   if (loading) {
-    return <div>Carregando produtos...</div>;
+    return (
+      <Typography display="flex" alignItems="center" justifyContent="center">
+        Carregando produtos...
+      </Typography>
+    );
   }
 
   const handleAddToCart = (product) => {
@@ -37,19 +41,26 @@ function ProductPaper() {
 
   return (
     <Grid>
-      <Typography variant='h3' fontFamily={'Baloo2Regular'} fontWeight={'bold'} textAlign={'center'} padding={7}>Cárdapio  </Typography>
+      <Typography
+        variant="h3"
+        fontFamily={"Baloo2Regular"}
+        fontWeight={"bold"}
+        textAlign={"center"}
+        padding={7}
+      >
+        Cárdapio{" "}
+      </Typography>
       <Grid
         container
-        direction='row'
-        alignItems='center'
-        justifyContent='center'
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
         spacing={4}
       >
-
         {products.map((product) => (
-          <Grid item key={product.id}>
+          <Grid item key={product.id} padding={2}>
             <ProductCard
-              className='productCard'
+              className="productCard"
               id={product.id}
               nome={`${product.categoria.nome} - ${product.nome}`}
               fotoUrl={product.fotoUrl}
@@ -61,12 +72,8 @@ function ProductPaper() {
             />
           </Grid>
         ))}
-        <Typography>
-          Total de itens no carrinho: {totalItems}
-        </Typography>
       </Grid>
     </Grid>
-
   );
 }
 
