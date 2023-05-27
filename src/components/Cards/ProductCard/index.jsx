@@ -1,13 +1,12 @@
-import { Grid, Typography } from "@mui/material";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { Grid, Typography } from '@mui/material';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
-import ProductImage from "../../Product/ProductImage";
-import ProductName from "../../Product/ProductName";
+import ProductImage from '../../Product/ProductImage';
 
-import { floatToBRL } from "../../../helpers/floatToBRL";
-import PaperBlock from "../../PaperBlock";
+import { floatToBRL } from '../../../helpers/floatToBRL';
+import PaperBlock from '../../Papers/PaperBlock';
 
-import "./styles.css";
+import './styles.css';
 
 function ProductCard({
 	nome,
@@ -18,32 +17,39 @@ function ProductCard({
 }) {
 	return (
 		<>
-			<PaperBlock className="productCard">
-				<Grid container direction="column" alignItems="center" justifyContent='center'>
+			<PaperBlock className='productCard'>
+				<Grid
+					container
+					direction='column'
+					alignItems='center'
+					justifyContent='center'
+				>
 					<ProductImage fotoUrl={fotoUrl} />
-					<ProductName nome={nome} />
+					<Typography className='productName' fontWeight='bold' fontSize={21}>
+						{nome}
+					</Typography>
 					<Typography
-						fontWeight="bold"
-						color={disponivel === true ? "#AAFF33" : "#FF0000"}
+						fontWeight='bold'
+						color={disponivel === true ? '#AAFF33' : '#FF0000'}
 					>
-						{disponivel === true ? "Disponível" : "Indisponível"}
+						{disponivel === true ? 'Disponível' : 'Indisponível'}
 					</Typography>
 					{disponivel === true ? (
 						<Grid
 							container
-							direction="row"
-							alignItems="center"
-							justifyContent="center"
+							direction='row'
+							alignItems='center'
+							justifyContent='center'
 						>
 							<AccessTimeIcon />
-							<Typography ml="2px" fontWeight="bold" fontSize={18}>
+							<Typography ml='2px' fontWeight='bold' fontSize={18}>
 								Tempo de preparo: {tempoPreparo} min
 							</Typography>
 						</Grid>
 					) : (
-						""
+						''
 					)}
-					<Typography fontWeight="bold" fontSize={18}>
+					<Typography fontWeight='bold' fontSize={18}>
 						{floatToBRL(valorUnitario)}
 					</Typography>
 				</Grid>

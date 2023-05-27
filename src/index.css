@@ -4,12 +4,12 @@
   box-sizing: border-box;
  }
  @font-face {
-  font-family: "Baloo2Regular";  
+  font-family: "Baloo2Regular";
   src: local("Baloo2Regular"),
     url("./fonts/Baloo2-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Baloo2ExtraBold";  
+  font-family: "Baloo2ExtraBold";
   src: local("Baloo2ExtraBold"),
     url("./fonts/Baloo2-ExtraBold.ttf") format("woff");
 }

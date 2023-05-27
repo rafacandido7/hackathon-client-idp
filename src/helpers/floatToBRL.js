@@ -1,8 +1,5 @@
 export const floatToBRL = (float) => {
-  if (float === null) return 'R$ -'
-  const money = float.toLocaleString('pt-BR', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })
-  return `R$ ${money}`
-}
+  if (float === null) return 'R$ -';
+  const valorFormatado = Number(float).toFixed(2).replace('.', ',');
+  return `R$ ${valorFormatado}`;
+};

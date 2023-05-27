@@ -1,17 +1,17 @@
-import Footer from '../Footer'
-import FoodMenu from '../Views/Menu';
+import Footer from "../Footer";
 import Navbar from '../Views/Navbar';
 
 import "./styles.css";
 import '../../index.css';
 
 function App() {
-	return (
-		<div className="App">
+  return (
+    <div className="App">
 			<Navbar />
+
 			<Footer />
-		</div>
-	);
+    </div>
+  );
 }
 
 export default App;

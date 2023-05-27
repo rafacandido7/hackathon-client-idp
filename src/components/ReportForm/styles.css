@@ -1,0 +1,10 @@
+.content {
+  width: 100%;
+  height: 780px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://wpcdn.idp.edu.br/idpsiteportal/2020/08/home-1-scaled.jpg');
+}
+
